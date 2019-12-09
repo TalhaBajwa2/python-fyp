@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Admin Panel </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/simple-sidebar.css" rel="stylesheet">
+  <link rel="shortcut icon" href="{{url_for('static', filename = 'adminlogo.png' )}}">
+
+
+</head>
+
+<body class="bg-light">
+
+  <div class="d-flex" id="wrapper bg-dark">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <a href="/dashbord" style="text-decoration: none; font-weight: bold;">
+        <div class="sidebar-heading text-center">
+          Admin
+        </div>
+      </a> 
+      
+      <div class="list-group list-group-flush">
+        <a href="/dashbord" class="list-group-item list-group-item-action ">Dashboard</a>
+        <a href="/adduser" class="list-group-item list-group-item-action bg-light">Add User</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    {% block body %}
+
+    {% endblock %}
+
+<!-- Footer -->
+    <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for ('static' , filename = 'vendor/jquery/jquery.min.js')}} "></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</div>
+</body>
+
+</html>

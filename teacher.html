@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Teacher Panel </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+  <div class="d-flex" id="wrapper" >
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <!-- <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+       
+      </nav>
+
+      <div class="container mt-5">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          RollNo.
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            FatherName
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Attendance
+        </th>
+        
+        
+    </thead>
+    <tbody>
+        {% for row in register  %}
+      <tr>
+            <td>
+               {{row.0}}
+            </td>
+            <td>
+                {{row.1}}
+            </td>
+            <td>
+                {{row.2}}
+            </td>
+             <td>
+                {{row.8}}
+            </td>
+             
+            <td>
+                <a href="/update/{{row.0}}" class="btn btn-primary"  data-toggle="modal" data-target="#modaledit{{row.0}}" > Attendance</a> <!-- target="_blank" --> 
+            </td>
+            
+      </tr>
+
+<div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+           <h4 class="modal-title text-left" >Attendance</h4>
+            <button type="button" class="close  " style="text-align: right !important;" data-dismiss="modal" >&times;</button>
+         </div>
+         <div class="modal-body">
+            <form action="{{ url_for('update') }}" method="POST">
+              <div class="form-group">
+                  <label>P/A:</label>
+                   <input type="hidden"  name="id" value="{{row.0}}" required="required">
+                  <input type="text" class="form-control" name="attendance" value="{{row.8}}" required="required">
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary" type="sbumit">EnRoll</button>
+               </div>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+    </div>
+    {% endfor %}
+    </tbody>
+    </table>
+     <!-- <a href="/update" class="btn btn-primary"  data-toggle="modal" data-target="#modalannouncement" > Announcement</a>   --><!-- target="_blank"  -->
+      <!-- <div id="modalannouncement" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                 <h4 class="modal-title text-left" >Announcement</h4>
+                  <button type="button" class="close  " style="text-align: right !important;" data-dismiss="modal" >&times;</button>
+               </div>
+               <div class="modal-body"> 
+                  <form action="/teacher" method="POST"> 
+                    <div class="form-group">
+                        <label>Announcement:</label>
+                         <input type="hidden"  name="id"  >
+                        <textarea  class="form-control" name="announcement"  required="required"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="sbumit">EnRoll</button>
+                     </div>
+                  </form>
+                  </div>
+                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+              </div>
+           </div>
+          </div> -->
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+   
+               
+           
+
+  <script src="{{url_for ('static' , filename = 'vendor/jquery/jquery.min.js')}} "></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</div>
+</body>
+
+</html> 

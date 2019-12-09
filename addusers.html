@@ -1,0 +1,52 @@
+{% extends "HeaderFooter.html" %}
+
+
+{% block body %}
+    <!-- Page Content -->
+    <div id="page-content-wrapper" >
+
+      <h1 class="text-center mt-4">Register Users</h1>
+      <form method="POST">
+        <div class="form-row mt-4">
+          <div class="col-md-12 offset-3">
+            <div class="form-group col-md-6">
+            <label for="inputAddress2">Name</label>
+            <input type="text" class="form-control" id="inputAddress2" name="name" placeholder="Enter UserName" required="required">
+            </div>
+            <div class="form-group col-md-6">
+            <label for="inputAddress2">Father Name</label>
+            <input type="text" class="form-control" id="inputAddress2" name="fathername" placeholder="Enter Father Name" required="required">
+            </div>
+            <div class="form-group col-md-6"> 
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Enter UserEmail" required="required">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter UserPassword" required="required">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Address</label>
+              <input type="text" class="form-control" id="inputPassword4" name="address" placeholder="Enter User Address" required="required">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4"><center><strong class="text-center">Role</strong></center></label><br>
+              <b >Teacher</b>
+              <input type="radio" id="inputPassword4" name="role" value="teacher" required="required">
+              <b class="ml-5">Student</b>
+              <input type="radio"  id="inputPassword4" name="role" value="student" required="required">
+            </div>
+            <div class="form-group col-md-6 offset-5">
+            <button type="submit" class="btn btn-primary pull-right">Register</button>
+          </div>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+ 
+  <!-- /#wrapper -->
+{% endblock %}
+  

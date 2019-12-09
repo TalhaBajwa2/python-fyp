@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Urser Panal </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+  <div class="d-flex" id="wrapper bg-dark">
+
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper" >
+
+      <h1 class="text-center mt-5">User Login</h1>
+      <form method="POST">
+        <div class="form-row mt-5">
+          <div class="col-md-12 offset-3">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Enter UserEmail" required="required">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter UserPassword" required="required">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4"><center><strong class="text-center">Role</strong></center></label><br>
+              <b >Teacher</b>
+              <input type="radio" id="inputPassword4" name="role" value="teacher" required="required">
+              <b class="ml-5">Student</b>
+              <input type="radio"  id="inputPassword4" name="role" value="student" required="required">
+            </div>
+            <div class="form-group col-md-6 offset-5">
+            <button type="submit" class="btn btn-primary pull-right">Login</button>
+          </div>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+ 
+  <!-- /#wrapper -->
+  <script src="{{url_for ('static' , filename = 'vendor/jquery/jquery.min.js')}} "></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</div>
+</body>
+
+</html>  

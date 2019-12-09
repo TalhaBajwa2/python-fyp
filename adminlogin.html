@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Admin Panel </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+  <div class="d-flex" id="wrapper" >
+
+    
+    <!-- Page Content -->
+    <div id="page-content-wrapper" >
+
+      <h1 class="text-center mt-5">Admin Login</h1>
+      <form method="POST" action="{{ url_for('admin') }}" autocomplete="off">
+        <div class="form-row mt-5">
+          <div class="col-md-12 offset-3">   
+             <!-- <div class="alert alert-danger col-md-3 text-center" role="alert">
+              {{ msg }}
+              </div> -->
+            <div class="msg"><h5> {{msg}}</h5></div>
+            <div class="form-group col-md-4">
+            <label for="inputAddress2">Name</label>
+            <input type="text" class="form-control" id="inputAddress2" name="name" placeholder="Enter UserName" required="required">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter UserPassword" required="required">
+            </div>
+            
+            <div class="form-group col-md-4 offset-3">
+            <button type="submit" class="btn btn-primary pull-right">Login</button>
+          </div>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+ 
+  <!-- /#wrapper -->
+  <script src="{{url_for ('static' , filename = 'vendor/jquery/jquery.min.js')}} "></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+</div>
+</body>
+
+</html>  
